@@ -112,6 +112,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](/docs/LICENSE.md
 ### 🧑‍💻 Autor
 Feito com ❤️ por Carlos Eduardo.
 
-=======
-# Fiber-NET-Telecom
->>>>>>> 68ee1fb585a2c529def8a2a799a966897fb15b17
+

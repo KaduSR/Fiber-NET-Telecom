@@ -1,0 +1,76 @@
+# .github/workflows/ci.yml
+name: CI/CD FiberNetTelecom Monorepo
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Job para o backend (API)
+  api_ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Use uma versão LTS estável
+
+      - name: Install API Dependencies
+        run: cd api && npm install
+
+      - name: Run API Tests
+        run: cd api && npm test # Certifique-se de ter testes configurados na pasta api
+
+  # Job para o frontend web
+  web_ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Web Dependencies
+        run: cd web && npm install
+
+      - name: Run Web Tests
+        run: cd web && npm test # Certifique-se de ter testes configurados na pasta web
+
+      # Opcional: Build do projeto web para verificar se compila
+      - name: Build Web Project
+        run: cd web && npm run build
+
+  # Job para o aplicativo móvel
+  mobile_ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Mobile Dependencies
+        run: cd mobile && npm install
+
+      - name: Run Mobile Tests
+        run: cd mobile && npm test # Certifique-se de ter testes configurados na pasta mobile
+
+      # Opcional: Build do projeto mobile (apenas para verificar compilação, não gera APK/IPA)
+      # Para builds completos de mobile, você precisaria de runners específicos ou serviços como Expo EAS, Bitrise, etc.
+      - name: Build Mobile Project (iOS)
+        run: cd mobile && npx react-native run-ios --simulator="iPhone 14" --dry-run # Exemplo, pode variar
+        # requires macOS runner for actual iOS build
+      - name: Build Mobile Project (Android)
+        run: cd mobile && npx react-native run-android --dry-run # Exemplo, pode variar
+        # requires Android SDK setup on runner

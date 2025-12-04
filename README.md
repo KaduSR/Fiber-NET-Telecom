@@ -36,9 +36,10 @@
 O **FiberNetTelecom** é uma solução completa desenvolvida para gerenciar os serviços da provedora. Este repositório atua como um *monorepo*, centralizando o código-fonte de diferentes frentes do negócio em um único lugar.
 
 O projeto engloba:
-* **Site Institucional:** A face pública da FiberNetTelecom.
-* **Área do Cliente (Web):** Portal para gestão de contas e serviços pelo navegador.
-* **Aplicativo Móvel:** Versão nativa para Android e iOS, oferecendo comodidade aos usuários.
+
+- **Site Institucional:** A face pública da FiberNetTelecom.
+- **Área do Cliente (Web):** Portal para gestão de contas e serviços pelo navegador.
+- **Aplicativo Móvel:** Versão nativa para Android e iOS, oferecendo comodidade aos usuários.
 
 ---
 
@@ -59,6 +60,7 @@ O código está organizado da seguinte forma para facilitar a manutenção e o c
 Abaixo estão as instruções para rodar cada parte do projeto em seu ambiente local.
 
 ### Pré-requisitos
+
 Certifique-se de ter o **Node.js** e o **NPM** (ou Yarn) instalados em sua máquina.
 
 ### Web
@@ -66,30 +68,39 @@ Certifique-se de ter o **Node.js** e o **NPM** (ou Yarn) instalados em sua máqu
 Para rodar o site e a área do cliente:
 
 1. **Clone o repositório:**
+
    ```bash
    git clone [https://github.com/KaduSR/fibernet-telecom.git](https://github.com/KaduSR/fibernet-telecom.git)
 2. **Acesse a pasta web e instale as dependências:**
+
    ```bash
    cd web 
    npm install
 3. **Inicie o projeto:**
+
    ```bash
    npm start
+
 ## 📱 Mobile
 
 Para rodar o aplicativo móvel:
 
-1. **Acesse a pasta mobile (após clonar):** 
+1. **Acesse a pasta mobile (após clonar):**
+
    ```bash
    cd mobile
 2. **Instale as dependências:**
+
    ```bash
    npm install
 3. **Execute no dispositivo desejado:**
- * **Android**
+
+- **Android**
+
    ```bash
    npm run android
- * **iOS**
+- **iOS**
+
    ```bash
    npm run ios
 
@@ -106,10 +117,11 @@ Para rodar o aplicativo móvel:
 ---
 
 ### **📄 Licença**
+
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](/docs/LICENSE.md) para mais detalhes.
 
 ---
+
 ### 🧑‍💻 Autor
+
 Feito com ❤️ por Carlos Eduardo.
-
-

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { login } from '../services/auth';
-import { Cliente } from './../../../web/src/types/api';
 
-const LoginsScreen = ({ navigation }) => {
+const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -23,22 +22,22 @@ const LoginsScreen = ({ navigation }) => {
             <Text style={styles.subtitle}>Área do Cliente</Text>
 
             <TextInput
-                styles={styles.input}
+                style={styles.input}
                 placeholder="E-mail"
                 value={email}
                 onChangeText={setEmail} />
             
             <TextInput
-                styles={styles.input}
+                style={styles.input}
                 placeholder='Senha'
                 onChangeText={setPassword}
                 secureTextEntry
             />
 
-            {error ? <Text styles={styles.error}>{error}</Text> : null}
+            {error ? <Text style={styles.error}>{error}</Text> : null}
 
-            <TouchableOpacity styles={styles.button} onPress={handleLogin}>
-                <Text styles={styles.buttonText}>Entrar</Text>
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
         </View>
     );
@@ -67,7 +66,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ddd',
         borderRadius: 8,
-        marginBotton: 15,
+        marginBottom: 15,
         paddingHorizontal: 15,
     },
     button: {
@@ -83,5 +82,5 @@ const styles = StyleSheet.create({
     },
 });
 
-export default LoginsScreen;
+export default LoginScreen;
 

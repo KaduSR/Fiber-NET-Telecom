@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
   <img src="https://via.placeholder.com/200x200.png?text=FiberNet" alt="FiberNetTelecom" width="200"/>
 </p>
@@ -112,3 +113,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](/docs/LICENSE.md
 ### 🧑‍💻 Autor
 Feito com ❤️ por Carlos Eduardo.
 
+=======
+# Fiber-NET-Telecom
+>>>>>>> 68ee1fb585a2c529def8a2a799a966897fb15b17

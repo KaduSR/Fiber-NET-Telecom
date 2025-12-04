@@ -1,139 +1,114 @@
-# Fiber.Net Telecom - Web App & Portal do Cliente
+<p align="center">
+  <img src="https://via.placeholder.com/200x200.png?text=FiberNet" alt="FiberNetTelecom" width="200"/>
+</p>
 
-Aplicação Web moderna desenvolvida para o provedor de internet **Fiber.Net Telecom**. O projeto inclui uma Landing Page institucional, uma Área do Cliente completa (Dashboard), Central de Ajuda, Status de Serviços em tempo real e Suporte via Inteligência Artificial.
+<h1 align="center">FiberNetTelecom</h1>
 
-## 🚀 Tecnologias Utilizadas
-
-- **Core:** React 18, TypeScript, Vite.
-- **Estilização:** Tailwind CSS.
-- **Ícones:** Lucide React.
-- **Inteligência Artificial:** Google Gemini API (`@google/genai`).
-- **Mapas:** Leaflet & React-Leaflet.
-- **PDF:** jsPDF (Geração de documentos no front-end).
-- **Integração:** Fetch API com Proxy reverso (para contornar CORS).
-
----
-
-## ✨ Funcionalidades Principais
-
-### 1. Landing Page Institucional
-- Apresentação de planos com destaque visual.
-- Teste de Velocidade (SpeedTest).
-- Feed de Notícias de Tecnologia (consumindo RSS feeds externos).
-- Mapa de Cobertura/Localização interativo.
-
-### 2. Área do Cliente (Dashboard)
-- **Autenticação:** Login seguro com JWT.
-- **Modo Demo:** Funcionalidade de demonstração para testes sem backend.
-- **Visão Geral:** Resumo de contratos, status da conexão e financeiro.
-- **Financeiro:** 
-  - Listagem de faturas (Aberto/Pago).
-  - Cópia de linha digitável.
-  - **PIX Copia e Cola:** Geração dinâmica de QR Code.
-  - Download de PDF da fatura.
-- **Conexões:**
-  - Status em tempo real da ONU (Online/Offline).
-  - Telemetria: Nível de sinal óptico (RX/TX), temperatura e Uptime.
-  - Ações remotas: Desconectar, Limpar MAC, Diagnóstico.
-- **Consumo:** Gráficos interativos de uso de banda (Download/Upload).
-
-### 3. Suporte Inteligente (IA)
-- Chatbot integrado com **Google Gemini 2.5**.
-- Capacidade de responder dúvidas sobre faturas, conexão e suporte técnico.
-- **Grounding:** A IA pode realizar buscas no Google para verificar se serviços externos (WhatsApp, Instagram, Bancos) estão fora do ar.
-
-### 4. Utilitários
-- **2ª Via Rápida:** Modal público para consulta de boletos apenas com CPF/CNPJ.
-- **Status dos Serviços:** Monitoramento de serviços populares (Netflix, Bancos, Redes Sociais) para informar o cliente sobre instabilidades externas.
-- **Código de Ética:** Visualização e geração de PDF do código de conduta da empresa.
+<p align="center">
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/licença-MIT-blue.svg" alt="Licença">
+  </a>
+  <a href="https://github.com/KaduSR/fibernet-telecom/issues">
+    <img src="https://img.shields.io/github/issues/KaduSR/fibernet-telecom" alt="Issues">
+  </a>
+  <a href="https://github.com/KaduSR/fibernet-telecom/stargazers">
+    <img src="https://img.shields.io/github/stars/KaduSR/fibernet-telecom" alt="Stars">
+  </a>
+</p>
 
 ---
 
-## 🛠️ Instalação e Configuração
+## 📝 Índice
 
-### Pré-requisitos
-- Node.js (versão 18 ou superior).
-- Gerenciador de pacotes (npm, yarn ou pnpm).
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [📂 Estrutura do Projeto](#-estrutura-do-projeto)
+- [🏁 Começando](#-começando)
+  - [Web](#web)
+  - [Mobile](#mobile)
+- [🤝 Como Contribuir](#-como-contribuir)
+- [📄 Licença](#-licença)
+- [🧑‍💻 Autor](#-autor)
 
-### Passos
+---
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/fibernet-telecom.git
-   cd fibernet-telecom
-   ```
+## 📖 Sobre o Projeto
 
-2. **Instale as dependências:**
-   ```bash
-   npm install
-   ```
+O **FiberNetTelecom** é uma solução completa desenvolvida para gerenciar os serviços da provedora. Este repositório atua como um *monorepo*, centralizando o código-fonte de diferentes frentes do negócio em um único lugar.
 
-3. **Configuração de Variáveis de Ambiente:**
-   Crie um arquivo `.env` na raiz do projeto (ou configure no seu ambiente de deploy):
-
-   ```env
-   # Chave da API do Google Gemini (Obrigatório para o Chatbot)
-   API_KEY=sua_chave_gemini_aqui
-   ```
-
-4. **Executar em Desenvolvimento:**
-   ```bash
-   npm run dev
-   ```
-   Acesse `http://localhost:5173`.
+O projeto engloba:
+* **Site Institucional:** A face pública da FiberNetTelecom.
+* **Área do Cliente (Web):** Portal para gestão de contas e serviços pelo navegador.
+* **Aplicativo Móvel:** Versão nativa para Android e iOS, oferecendo comodidade aos usuários.
 
 ---
 
 ## 📂 Estrutura do Projeto
 
-```
-/
-├── components/          # Componentes Reutilizáveis de UI
-│   ├── ClientArea.tsx   # Lógica principal do Dashboard do Cliente
-│   ├── AIInsights.tsx   # Componente de análise da IA no Dashboard
-│   ├── HelpCenter.tsx   # Central de Ajuda (FAQ)
-│   ├── ServiceStatus.tsx# Página de Status de Serviços Externos
-│   └── ...
-├── src/
-│   ├── services/
-│   │   └── apiService.ts # Camada de abstração para comunicação com Backend
-│   ├── types/           # Definições de Tipos TypeScript (Interfaces)
-│   └── config.ts        # Configurações globais e Endpoints
-├── utils/               # Funções utilitárias (Geradores de PDF, Formatadores)
-├── App.tsx              # Componente Raiz e Roteamento (SPA)
-├── index.html           # Ponto de entrada e Metadados SEO
-└── vite.config.ts       # Configuração do Vite e Proxy
-```
+O código está organizado da seguinte forma para facilitar a manutenção e o compartilhamento de recursos:
+
+| Pasta | Descrição |
+|-------|-----------|
+| `web/` | Código fonte do Site Institucional e da Área do Cliente (Web). |
+| `mobile/` | Código fonte do Aplicativo Móvel (Android/iOS). |
+| `api/` | Backend e API compartilhados entre as plataformas Web e Mobile. |
 
 ---
 
-## 🔌 Integração com Backend (API)
+## 🏁 Começando
 
-O projeto utiliza um arquivo centralizado de serviços (`src/services/apiService.ts`).
+Abaixo estão as instruções para rodar cada parte do projeto em seu ambiente local.
 
-- **Proxy:** Para evitar problemas de CORS em desenvolvimento e produção, as requisições para `/api-proxy/*` são redirecionadas para o backend real configurado no `vite.config.ts` ou `vercel.json`.
-- **Endpoints:** Definidos em `src/config.ts`.
-- **Cache:** O Dashboard utiliza `localStorage` para cachear dados do cliente (`fiber_dashboard_cache_v13...`) e melhorar a velocidade de carregamento.
+### Pré-requisitos
+Certifique-se de ter o **Node.js** e o **NPM** (ou Yarn) instalados em sua máquina.
 
-## 🤖 Configuração da IA (Gemini)
+### Web
 
-A integração com a IA está localizada em `components/ClientArea.tsx`.
-- **Modelo:** `gemini-2.5-flash`.
-- **Tools:** Utiliza `googleSearch` para buscar informações em tempo real sobre quedas de serviços na internet.
-- **System Instruction:** O prompt do sistema instrui a IA a agir como um suporte técnico de provedor, focado em soluções de conectividade.
+Para rodar o site e a área do cliente:
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/KaduSR/fibernet-telecom.git](https://github.com/KaduSR/fibernet-telecom.git)
+2. **Acesse a pasta web e instale as dependências:**
+   ```bash
+   cd web 
+   npm install
+3. **Inicie o projeto:**
+   ```bash
+   npm start
+## 📱 Mobile
+
+Para rodar o aplicativo móvel:
+
+1. **Acesse a pasta mobile (após clonar):** 
+   ```bash
+   cd mobile
+2. **Instale as dependências:**
+   ```bash
+   npm install
+3. **Execute no dispositivo desejado:**
+ * **Android**
+   ```bash
+   npm run android
+ * **iOS**
+   ```bash
+   npm run ios
 
 ---
 
-## 📦 Deploy
+## 🤝 Como Contribuir
 
-O projeto já contém um arquivo `vercel.json` configurado para deploy na **Vercel**, incluindo as regras de reescrita (rewrites) para o proxy da API.
-
-Para fazer deploy:
-1. Suba o código para o GitHub.
-2. Importe o projeto na Vercel.
-3. Adicione a variável de ambiente `API_KEY`.
-4. O deploy será automático.
+1. Faça um Fork do projeto.
+2. Crie uma nova branch com a sua feature: ```git checkout -b feature/sua-feature```.
+3. Faça commit das suas alterações: ```git commit -m 'feat: Adiciona nova funcionalidade'```.
+4. Envie para a sua branch: ```git push origin feature/sua-feature```.
+5. Abra um **Pull Request**.
 
 ---
 
-**Desenvolvido por Fiber.Net Telecom**
+### **📄 Licença**
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](/docs/LICENSE.md) para mais detalhes.
+
+---
+### 🧑‍💻 Autor
+Feito com ❤️ por Carlos Eduardo.
+

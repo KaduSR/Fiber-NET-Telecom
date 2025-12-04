@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 <p align="center">
-  <img src="https://via.placeholder.com/200x200.png?text=FiberNet" alt="FiberNetTelecom" width="200"/>
+  <img src="[https://via.placeholder.com/200x200.png?text=FiberNet](https://res.cloudinary.com/dbblxiya7/image/upload/v1763728271/Design_sem_nome_pcysok.svg)" alt="FiberNetTelecom" width="200"/>
 </p>
 
 <h1 align="center">FiberNetTelecom</h1>

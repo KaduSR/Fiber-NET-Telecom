@@ -1,18 +1,16 @@
-const API_URL = 'http://<YOUR_IP_ADDRESS>:3001/api';
+import api from './api';
 
 export const login = async (email, password) => {
-    const response = await fetch(`${API_URL}/auth/login`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-    });
-
-    if (!response.ok) {
-        throw new Error('Credenciais inválidas');
+    try {
+        const response = await api.post('/api/auth/login', {email, password});
+        return response.data;
+    } catch (error) {
+        throw error;
     }
-
-    const data = await response.json();
-    return data;
 };
+
+export const logout = async () => {
+    // Lógica para logout
+    // Exemplo: await AsyncStorage.removeItem('token');
+};
+

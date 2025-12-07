@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Crie uma instância do axios com a URL base da API
 const api = axios.create({
-    baseURL: 'https:10.0,2.2:3001', // Usa localhost do computador a partir do emulador Android
+    baseURL: 'http://10.0.2.2:3333/api', // Usa localhost do computador a partir do emulador Android
     // Ajuste a URL conforme necessário
 });
 

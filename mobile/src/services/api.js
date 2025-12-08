@@ -1,10 +1,12 @@
 import axios from 'axios';
+import Constants from 'expo-constants'; // Import Constants from expo-constants
+
+// Determine the API base URL
+const API_BASE_URL = Constants.expoConfig.extra?.API_URL || process.env.API_URL || 'http://10.0.2.2:3333/api';
 
 // Crie uma instância do axios com a URL base da API
 const api = axios.create({
-    baseURL: 'http://10.0.2.2:3333/api', // Usa localhost do computador a partir do emulador Android
-    // Ajuste a URL conforme necessário
-});
+    baseURL: API_BASE_URL,
 
 api.interceptors.request.use(async(config)=> {
     // Aqui você pode adicionar lógica para obter o token do AsyncStorege

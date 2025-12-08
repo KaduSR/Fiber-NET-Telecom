@@ -2,11 +2,11 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import LoginScreen from '../screens/LoginScreen';
+import LoginScreen from '../screens/Login';
 // Importe outras telas aqui
 
 
-const Stack = createStackNavigation();
+const Stack = createStackNavigator();
 
 const Navigation = () => {
     return (

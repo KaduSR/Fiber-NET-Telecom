@@ -173,3 +173,9 @@ export interface ChatMessage {
     timestamp: Date;
     sources?: { title: string; url: string }[];
 }
+
+export interface Action {
+  type: 'open_ticket' | 'view_bill' | 'schedule_tech' | string;
+  label: string;
+  data?: any;
+}
